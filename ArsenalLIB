@@ -33,7 +33,7 @@ end
 local function RoundBox()
 	local Round = Instance.new("ImageLabel")
 	Round.BackgroundTransparency = 1
-	Round.Image = "http://www.roblox.com/asset/?id=4941544626"
+	Round.Image = "rbxasset://textures/ui/dialog_white@2x.png"
 	Round.ScaleType = Enum.ScaleType.Slice
 	Round.SliceCenter = Rect.new(10, 10, 10, 10)
 	return Round
