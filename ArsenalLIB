@@ -113,7 +113,7 @@ local function CheckBox()
 	Checker.Position = UDim2.new(0,4,0,4)
 	Checker.ImageColor3 = libraryColours.Primary
 	Checker.BackgroundTransparency = 1
-	Checker.Image = "rbxassetid://4941544626"
+	Checker.Image = "http://www.roblox.com/asset/?id=4941544626"
 	return Checker
 end
 
