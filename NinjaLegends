@@ -1,6 +1,6 @@
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/VelocityHost/Velocity/main/UILIB"))()
 
-local MainUI = UILibrary.Load("Velocity Hub")
+local MainUI = UILibrary.Load("Ninja Legends 2")
 local FirstPage = MainUI.AddPage("Cheats")
 
 game:GetService('RunService').Heartbeat:connect(function()
@@ -60,4 +60,63 @@ local SecondToggle = FirstPage.AddToggle("Auto Sell", false, function(Value)
 	yes  = Value
 end)
 
+game:GetService('RunService').Heartbeat:connect(function()
+	if chest then
+		_G.OpenChest = true
+		while _G.OpenChest do
+			wait()
+			game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.4551544, 1476.99072, 129.12915)
+			wait(3)
+			game:GetService("ReplicatedStorage").rEvents.checkChestRemote:InvokeServer("Cybernetic Chest")
+		end
+	else
+		_G.OpenChest = false
+		while _G.OpenChest do
+			wait()
+			game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.4551544, 1476.99072, 129.12915)
+			wait(3)
+			game:GetService("ReplicatedStorage").rEvents.checkChestRemote:InvokeServer("Cybernetic Chest")
+		end
+	end
+end)
 
+local ThiredToggle = FirstPage.AddToggle("Cybernetic Chest", false, function(Value)
+	chest = Value
+end)
+
+game:GetService('RunService').Heartbeat:connect(function()
+	if orb then
+		_G.Orb = true
+		while _G.Orb do
+			game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Astral Orb"],false)
+		end	
+	else
+		_G.Orb = false
+		while _G.Orb do
+			game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Astral Orb"],false)
+		end
+	end
+
+end)
+
+local fourthToggle  = FirstPage.AddToggle("Astral Orb", false, function(Value)
+	orb = Value
+end)
+
+game:GetService('RunService').Heartbeat:connect(function()
+	if electro then
+		_G.Orb = true
+		while _G.Orb do
+			game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Electro Orb"],false)
+		end
+	else
+		_G.Orb = false
+		while _G.Orb do
+			game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Electro Orb"],false)
+		end
+	end
+end)
+
+local FithToggle = FirstPage.AddToggle("Electro Orb", false, function(Value)
+	electro = Value
+end)
