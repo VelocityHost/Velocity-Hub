@@ -1,0 +1,63 @@
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/VelocityHost/Velocity/main/UILIB"))()
+
+local MainUI = UILibrary.Load("Velocity Hub")
+local FirstPage = MainUI.AddPage("Cheats")
+
+game:GetService('RunService').Heartbeat:connect(function()
+	if  arg  then
+
+		_G.AutoFarm = true
+
+		while _G.AutoFarm do
+			wait()
+			game:GetService("Players").LocalPlayer.saberEvent:FireServer("swingBlade")
+
+		end
+	else
+
+		_G.AutoFarm = false
+
+		while _G.AutoFarm do
+			wait()
+			game:GetService("Players").LocalPlayer.saberEvent:FireServer("swingBlade")
+
+		end
+	end
+
+end)
+
+game:GetService('RunService').Heartbeat:connect(function()
+	if  yes  then
+
+		_G.AutoSell = true
+		while _G.AutoSell do
+			wait()
+			if game:GetService("Players").LocalPlayer.Element.Value then
+				game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-93.0559616, 113, 118.487694)
+
+			end
+		end
+
+	else
+
+		_G.AutoSell = false
+		while _G.AutoSell do
+			wait()
+			if game:GetService("Players").LocalPlayer.Element.Value then
+				game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-93.0559616, 113, 118.487694)
+
+			end
+		end
+	end	
+
+end)
+
+local FirstToggle = FirstPage.AddToggle("Auto Swing", false, function(Value)
+	arg = Value
+end)
+
+local SecondToggle = FirstPage.AddToggle("Auto Sell", false, function(Value)
+	yes  = Value
+end)
+
+
