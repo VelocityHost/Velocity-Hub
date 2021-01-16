@@ -1,0 +1,155 @@
+local library = loadstring(game:HttpGet("https://zypher.wtf/UI-Lib"))()
+
+local main = library:CreateMain({
+	projName = "Ninja Legends 2",
+    Resizable = false,
+    MinSize = UDim2.new(0,400,0,400),
+    MaxSize = UDim2.new(0,750,0,500),
+})
+
+local category = main:CreateCategory("Cheats")
+
+local section = category:CreateSection("Section")
+
+
+
+
+
+section:Create(
+    "Toggle",
+    "Auto Swing",
+    function(arg)
+		if  arg  then
+
+			_G.AutoFarm = true
+
+			while _G.AutoFarm do
+				wait()
+				game:GetService("Players").LocalPlayer.saberEvent:FireServer("swingBlade")
+
+			end
+		else
+
+			_G.AutoFarm = false
+
+			while _G.AutoFarm do
+				wait()
+				game:GetService("Players").LocalPlayer.saberEvent:FireServer("swingBlade")
+
+			end
+		end
+    end,
+    {
+        default = false,
+    }
+)
+
+section:Create(
+	"Toggle",
+	"Auto Sell",
+	function(yes)
+		if  yes  then
+
+			_G.AutoSell = true
+			while _G.AutoSell do
+				wait()
+				if game:GetService("Players").LocalPlayer.Element.Value then
+					game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-93.0559616, 113, 118.487694)
+
+				end
+			end
+
+		else
+
+			_G.AutoSell = false
+			while _G.AutoSell do
+				wait()
+				if game:GetService("Players").LocalPlayer.Element.Value then
+					game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-93.0559616, 113, 118.487694)
+
+				end
+			end
+		end	
+		
+	end,
+	{
+		default = false,
+	}
+)
+
+
+
+
+section:Create(
+	"Toggle",
+	"Cybernetic Chest",
+	function(chest)
+		if chest then
+			_G.OpenChest = true
+			while _G.OpenChest do
+				wait()
+				game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.4551544, 1476.99072, 129.12915)
+				wait(3)
+				game:GetService("ReplicatedStorage").rEvents.checkChestRemote:InvokeServer("Cybernetic Chest")
+			end
+		else
+			_G.OpenChest = false
+			while _G.OpenChest do
+				wait()
+				game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.4551544, 1476.99072, 129.12915)
+				wait(3)
+				game:GetService("ReplicatedStorage").rEvents.checkChestRemote:InvokeServer("Cybernetic Chest")
+			end
+		end
+	end,
+	{
+		default = false,
+	}
+)
+
+
+
+section:Create(
+	"Toggle",
+	"Astral Orb",
+	function(orb)
+		if orb then
+			_G.Orb = true
+			while _G.Orb do
+				game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Astral Orb"],false)
+			end	
+		else
+			_G.Orb = false
+			while _G.Orb do
+				game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Astral Orb"],false)
+			end
+		end
+	end,
+	{
+		default = false,
+	}
+)
+
+
+
+section:Create(
+	"Toggle",
+	"Electro Orb",
+	function(electro)
+		if electro then
+
+			_G.Orb = true
+			while _G.Orb do
+				game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Electro Orb"],false)
+			end
+		else
+			_G.Orb = false
+			while _G.Orb do
+				game:GetService("ReplicatedStorage").rEvents.openOrbRemote:InvokeServer("openOrb",workspace.petOrbs["Electro Orb"],false)
+			end
+		end
+	end,
+	{
+		default = false,
+	}
+)
