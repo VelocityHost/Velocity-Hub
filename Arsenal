@@ -1,0 +1,64 @@
+local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/VelocityHost/Velocity-Hub/main/ArsenalLIB"))()
+
+-- UI:Init(parent)
+-- Init:AddTab(title)
+-- AddTab:AddSection(title)
+-- AddSection:AddButton(text, callback)
+-- AddSection:AddSlider(text, default, callback)
+-- AddSection:AddKeybind(text, default, callback)
+-- AddSection:AddToggle(text, default, callback)
+
+local mainUI = ui:Init(game:GetService("CoreGui"))
+local homeTab = mainUI:AddTab("Visuals")
+local autoTab = mainUI:AddTab("Cheats")
+local farmSection = homeTab:AddSection("Arsenal")
+local farmMobs = farmSection:AddToggle("Chams", false, function(value)
+	if value then
+		
+	end
+end)
+local farmBosses = farmSection:AddToggle("Silent Aimbot", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/jLEGjjaP'))()
+	end
+end)
+local Crosshair = farmSection:AddToggle("Crosshair", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/74hYD6Z0'))()
+	end
+end)
+local tiggerbot  = farmSection:AddToggle("Triggerbot", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/JWCYx8Vd'))()
+	end
+end)
+local Speed = farmSection:AddSlider("WalkSpeed", {min = 16, max = 64, def = 40}, function(value)
+	if value then
+		
+	end
+end)
+local homeSettings = homeTab:AddSection("ESP")
+local rainbowColour = homeSettings:AddToggle("Enable ESP", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/DqMaA7F6'))()
+	end
+end)
+local espToggle = homeSettings:AddToggle("Enable Tracers", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/sacfXKQ5'))()
+	end
+end)
+
+
+local miscSection = autoTab:AddSection("Miscellaneous")
+local KillALL = miscSection:AddToggle("Kill All", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/B4guuB1W'))()
+	end
+end)
+
+local hidedeadplr = miscSection:AddToggle("Invisible", false, function(value)
+	if value then
+		loadstring(game:HttpGet('https://pastebin.com/raw/E3Wqm0G4'))()
+	end
+end)
