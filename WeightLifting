@@ -1,0 +1,101 @@
+local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/VelocityHost/Velocity-Hub/main/UILibV2"))()
+-- UI:Init(parent)
+-- Init:AddTab(title)
+-- AddTab:AddSection(title)
+-- AddSection:AddButton(text, callback)
+-- AddSection:AddSlider(text, default, callback)
+-- AddSection:AddKeybind(text, default, callback)
+-- AddSection:AddToggle(text, default, callback)
+
+local mainUI = ui:Init(game:GetService("CoreGui"))
+local homeTab = mainUI:AddTab("Auto Farm")
+local autoTab = mainUI:AddTab("Auto Buy")
+local farmSection = homeTab:AddSection("Weight Lifting")
+local farmMobs = farmSection:AddToggle("Auto Lift", false, function(value)
+	if value then
+		_G.autolift = true
+		while _G.autolift do
+			wait()
+			workspace.mouse6666.Vehicle.Server.Lift:FireServer()
+		end    
+	else
+		_G.autolift = false
+		while _G.autolift do
+			wait()
+			workspace.mouse6666.Vehicle.Server.Lift:FireServer()
+		end    
+	end
+end)
+
+local equip = farmSection:AddToggle("Equip", false, function(value)
+	if value then 
+		_G.autoequip = true
+		while _G.autoequip do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.Equip:FireServer(false)
+		end
+	else
+		_G.autoequip = false
+		while _G.autoequip do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.Equip:FireServer(false)
+		end
+	end
+end)
+
+local autobuySection = autoTab:AddSection("Cheats")
+local autobuyegg = autobuySection:AddToggle("Buy Egg", false, function(value)
+	if value then
+		_G.autobuy = true
+		
+		while _G.autobuy do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer("Normal")
+		end
+	else
+		_G.autobuy = false
+
+		while _G.autobuy do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer("Normal")
+		end
+	end
+end)
+
+local hatchegg = autobuySection:AddToggle("Hatch Egg", false, function(value)
+	if value then
+		_G.hatch = true
+		
+		while _G.hatch do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer()
+		end
+	else
+		_G.hatch = false
+
+		while _G.hatch do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer()
+		end
+	end
+end)
+
+local skiphatch = autobuySection:AddToggle("Skip Hatching", false, function(value)
+	if value then
+		_G.skip = true
+		
+		while _G.skip do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.SkipHatching:InvokeServer()
+			
+		end
+	else
+		_G.skip = false
+
+		while _G.skip do
+			wait()
+			game:GetService("ReplicatedStorage").Remotes.SkipHatching:InvokeServer()
+
+		end
+	end
+end)
